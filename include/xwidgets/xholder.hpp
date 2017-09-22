@@ -1,6 +1,7 @@
 #ifndef XWIDGETS_HOLDER_HPP
 #define XWIDGETS_HOLDER_HPP
 
+#include <stdexcept>
 #include <utility>
 
 #include "xeus/xguid.hpp"
@@ -305,15 +306,11 @@ namespace xw
     template <template <class> class CRTP>
     xeus::xguid xholder<CRTP>::id() const
     {
-        if (p_holder != nullptr)
+        if (p_holder == nullptr)
         {
-            return p_holder->id();
+            throw std::runtime_error("Invalid widget holder");
         }
-        else
-        {
-            // TODO: throw?
-            return xeus::xguid();
-        }
+        return p_holder->id();
     }
 
     template <template <class> class CRTP>
@@ -351,7 +348,7 @@ namespace xw
     template <template <class> class CRTP>
     inline void to_json(xeus::xjson& j, const xholder<CRTP>& o)
     {
-        j = "IPY_MODEL_" + guid_to_hex(o.id());
+        j = "IPY_MODEL_" + std::string(o.id());
     }
 
     template <template <class> class CRTP>
@@ -359,7 +356,7 @@ namespace xw
     {
         /*
         std::string prefixed_guid = j;
-        xguid guid = hex_to_guid(prefixed_guid.substr(10).c_str());
+        xeus::xguid guid guid = prefixed_guid.substr(10).c_str();
         auto& holder = get_transport_registry().find(guid);
         o;  // TODO: move?
         */
