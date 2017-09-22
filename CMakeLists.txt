@@ -110,6 +110,7 @@ set(XWIDGETS_HEADERS
     ${XWIDGETS_INCLUDE_DIR}/xwidgets/xcheckbox.hpp
     ${XWIDGETS_INCLUDE_DIR}/xwidgets/xcontroller.hpp
     ${XWIDGETS_INCLUDE_DIR}/xwidgets/xfactory.hpp
+    ${XWIDGETS_INCLUDE_DIR}/xwidgets/ximage.hpp
     ${XWIDGETS_INCLUDE_DIR}/xwidgets/xholder.hpp
     ${XWIDGETS_INCLUDE_DIR}/xwidgets/xhtml.hpp
     ${XWIDGETS_INCLUDE_DIR}/xwidgets/xlabel.hpp

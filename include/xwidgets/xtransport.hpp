@@ -98,7 +98,7 @@ namespace xw
         void display() const;
 
         void send_patch(xeus::xjson&&) const;
-        void send(xeus::xjson&&) const;
+        void send(xeus::xjson&&, xeus::buffer_sequence) const;
 
     protected:
 
@@ -283,30 +283,30 @@ namespace xw
         }
         xeus::xjson state;
         state[property.name()] = property();
-        send_patch(std::move(state));
+        send_patch(std::move(state), xeus::buffer_sequence());
     }
 
     template <class D>
-    inline void xtransport<D>::send_patch(xeus::xjson&& patch) const
+    inline void xtransport<D>::send_patch(xeus::xjson&& patch, std::vector<std::string> buffer_paths, xeus::buffer_sequence buffers) const
     {
         xeus::xjson metadata;
         metadata["version"] = XWIDGETS_PROTOCOL_VERSION;
         xeus::xjson data;
         data["method"] = "update";
         data["state"] = std::move(patch);
-        data["buffer_paths"] = xeus::xjson::array();
-        m_comm.send(std::move(metadata), std::move(data));
+        data["buffer_paths"] = std::move(buffer_paths);
+        m_comm.send(std::move(metadata), std::move(data), std::move(buffers));
     }
 
     template <class D>
-    inline void xtransport<D>::send(xeus::xjson&& content) const
+    inline void xtransport<D>::send(xeus::xjson&& content, xeus::buffer_sequence buffers) const
     {
         xeus::xjson metadata;
         metadata["version"] = XWIDGETS_PROTOCOL_VERSION;
         xeus::xjson data;
         data["method"] = "custom";
         data["content"] = std::move(content);
-        m_comm.send(std::move(metadata), std::move(data));
+        m_comm.send(std::move(metadata), std::move(data), std::move(buffers));
     }
 
     template <class D>
@@ -322,13 +322,13 @@ namespace xw
         metadata["version"] = XWIDGETS_PROTOCOL_VERSION;
         xeus::xjson data;
         data["state"] = derived_cast().get_state();
-        m_comm.open(std::move(metadata), std::move(data));
+        m_comm.open(std::move(metadata), std::move(data), xeus::buffer_sequence());
     }
 
     template <class D>
     inline void xtransport<D>::close()
     {
-        m_comm.close(xeus::xjson::object(), xeus::xjson::object());
+        m_comm.close(xeus::xjson::object(), xeus::xjson::object(), xeus::buffer_sequence());
     }
 
     template <class D>
