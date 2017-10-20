@@ -89,6 +89,7 @@ include_directories(${GTEST_INCLUDE_DIRS})
 set(XWIDGETS_TESTS
     main.cpp
     test_xwidgets.cpp
+    test_xany.cpp
 )
 
 # Output
