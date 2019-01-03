@@ -105,14 +105,26 @@ namespace xw
         xwidgets_serialize(value, patch[name], buffers);
     }
 
+    template <class T>
+    inline T set_property_from_patch_impl(const char* name, bool &isnew, const xeus::xjson& patch, const xeus::buffer_sequence& buffers)
+    {
+        T value;
+        auto it = patch.find(name);
+        if (it != patch.end())
+        {
+            isnew = true;
+            xwidgets_deserialize(value, *it, buffers);
+        }
+        return value;
+    }
+    
     template <class P>
     inline void set_property_from_patch(P& property, const xeus::xjson& patch, const xeus::buffer_sequence& buffers)
     {
-        auto it = patch.find(property.name());
-        if (it != patch.end())
+        bool isnew = false;
+        auto value = set_property_from_patch_impl<typename P::value_type>(property.name(), isnew, patch, buffers);
+        if (isnew)
         {
-            typename P::value_type value;
-            xwidgets_deserialize(value, *it, buffers);
             property = value;
         }
     }
