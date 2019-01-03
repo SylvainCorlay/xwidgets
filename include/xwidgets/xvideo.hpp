@@ -98,32 +98,9 @@ namespace xw
         this->_view_name() = "VideoView";
     }
 
-    /**********************
-     * custom serializers *
-     **********************/
-
-    inline void set_patch_from_property(const decltype(video::value)& property,
-                                        xeus::xjson& patch,
-                                        xeus::buffer_sequence& buffers)
-    {
-        patch[property.name()] = xbuffer_reference_prefix() + std::to_string(buffers.size());
-        buffers.emplace_back(property().data(), property().size());
-    }
-
-    inline void set_property_from_patch(decltype(video::value)& property,
-                                        const xeus::xjson& patch,
-                                        const xeus::buffer_sequence& buffers)
-    {
-        auto it = patch.find(property.name());
-        if (it != patch.end())
-        {
-            using value_type = typename decltype(video::value)::value_type;
-            std::size_t index = buffer_index(patch[property.name()].template get<std::string>());
-            const auto& value_buffer = buffers[index];
-            const char* value_buf = value_buffer.data<const char>();
-            property = value_type(value_buf, value_buf + value_buffer.size());
-        }
-    }
+    /**************************
+     * video from file or url *
+     **************************/
 
     inline video_generator video_from_file(const std::string& filename)
     {
