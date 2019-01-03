@@ -58,10 +58,10 @@ namespace xw
     {
         base_type::serialize_state(state, buffers);
 
-        set_patch_from_property(value, state, buffers);
-        set_patch_from_property(min, state, buffers);
-        set_patch_from_property(max, state, buffers);
-        set_patch_from_property(description, state, buffers);
+        set_patch_from_property("value", value(), state, buffers);
+        set_patch_from_property("min", min(), state, buffers);
+        set_patch_from_property("max", max(), state, buffers);
+        set_patch_from_property("description", description(), state, buffers);
     }
 
     template <class D>

@@ -142,8 +142,8 @@ namespace xw
     {
         base_type::serialize_state(state, buffers);
 
-        set_patch_from_property(value, state, buffers);
-        set_patch_from_property(pressed, state, buffers);
+        set_patch_from_property("value", value(), state, buffers);
+        set_patch_from_property("pressed", pressed(), state, buffers);
     }
 
     template <class D>
@@ -182,7 +182,7 @@ namespace xw
     {
         base_type::serialize_state(state, buffers);
 
-        set_patch_from_property(value, state, buffers);
+        set_patch_from_property("value", value(), state, buffers);
     }
 
     template <class D>
@@ -220,13 +220,13 @@ namespace xw
     {
         base_type::serialize_state(state, buffers);
 
-        set_patch_from_property(index, state, buffers);
-        set_patch_from_property(name, state, buffers);
-        set_patch_from_property(mapping, state, buffers);
-        set_patch_from_property(connected, state, buffers);
-        set_patch_from_property(timestamp, state, buffers);
-        set_patch_from_property(buttons, state, buffers);
-        set_patch_from_property(axes, state, buffers);
+        set_patch_from_property("index", index(), state, buffers);
+        set_patch_from_property("name", name(), state, buffers);
+        set_patch_from_property("mapping", mapping(), state, buffers);
+        set_patch_from_property("connected", connected(), state, buffers);
+        set_patch_from_property("timestamp", timestamp(), state, buffers);
+        set_patch_from_property("buttons", buttons(), state, buffers);
+        set_patch_from_property("axes", axes(), state, buffers);
     }
 
     template <class D>

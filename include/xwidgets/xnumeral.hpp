@@ -72,9 +72,9 @@ namespace xw
     {
         base_type::serialize_state(state, buffers);
 
-        set_patch_from_property(step, state, buffers);
-        set_patch_from_property(disabled, state, buffers);
-        set_patch_from_property(continuous_update, state, buffers);
+        set_patch_from_property("step", step(), state, buffers);
+        set_patch_from_property("disabled", disabled(), state, buffers);
+        set_patch_from_property("continuous_update", continuous_update(), state, buffers);
     }
 
     template <class D>

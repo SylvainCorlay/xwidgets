@@ -66,9 +66,9 @@ namespace xw
     {
         base_type::serialize_state(state, buffers);
 
-        set_patch_from_property(tooltip, state, buffers);
-        set_patch_from_property(icon, state, buffers);
-        set_patch_from_property(button_style, state, buffers);
+        set_patch_from_property("tooltip", tooltip(), state, buffers);
+        set_patch_from_property("icon", icon(), state, buffers);
+        set_patch_from_property("button_style", button_style(), state, buffers);
     }
 
     template <class D>

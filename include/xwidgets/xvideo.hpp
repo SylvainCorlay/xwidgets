@@ -63,12 +63,12 @@ namespace xw
     {
         base_type::serialize_state(state, buffers);
 
-        set_patch_from_property(format, state, buffers);
-        set_patch_from_property(width, state, buffers);
-        set_patch_from_property(height, state, buffers);
-        set_patch_from_property(autoplay, state, buffers);
-        set_patch_from_property(loop, state, buffers);
-        set_patch_from_property(controls, state, buffers);
+        set_patch_from_property("format", format(), state, buffers);
+        set_patch_from_property("width", width(), state, buffers);
+        set_patch_from_property("height", height(), state, buffers);
+        set_patch_from_property("autoplay", autoplay(), state, buffers);
+        set_patch_from_property("loop", loop(), state, buffers);
+        set_patch_from_property("controls", controls(), state, buffers);
     }
 
     template <class D>

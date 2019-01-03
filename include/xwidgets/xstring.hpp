@@ -53,8 +53,8 @@ namespace xw
     {
         base_type::serialize_state(state, buffers);
 
-        set_patch_from_property(value, state, buffers);
-        set_patch_from_property(placeholder, state, buffers);
+        set_patch_from_property("value", value(), state, buffers);
+        set_patch_from_property("placeholder", placeholder(), state, buffers);
     }
 
     template <class D>

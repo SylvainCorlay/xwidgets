@@ -61,8 +61,8 @@ namespace xw
     {
         base_type::serialize_state(state, buffers);
 
-        set_patch_from_property(layout, state, buffers);
-        set_patch_from_property(_dom_classes, state, buffers);
+        set_patch_from_property("layout", layout(), state, buffers);
+        set_patch_from_property("_layout", _dom_classes(), state, buffers);
     }
 
     template <class D>

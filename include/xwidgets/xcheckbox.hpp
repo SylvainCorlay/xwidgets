@@ -55,7 +55,7 @@ namespace xw
     {
         base_type::serialize_state(state, buffers);
 
-        set_patch_from_property(indent, state, buffers);
+        set_patch_from_property("indent", indent(), state, buffers);
     }
 
     template <class D>

@@ -73,12 +73,12 @@ namespace xw
     {
         base_type::serialize_state(state, buffers);
 
-        set_patch_from_property(interval, state, buffers);
-        set_patch_from_property(step, state, buffers);
-        set_patch_from_property(disabled, state, buffers);
-        set_patch_from_property(_playing, state, buffers);
-        set_patch_from_property(_repeat, state, buffers);
-        set_patch_from_property(show_repeat, state, buffers);
+        set_patch_from_property("interval", interval(), state, buffers);
+        set_patch_from_property("step", step(), state, buffers);
+        set_patch_from_property("disabled", disabled(), state, buffers);
+        set_patch_from_property("_playing", _playing(), state, buffers);
+        set_patch_from_property("_repeat", _repeat(), state, buffers);
+        set_patch_from_property("show_repeat", show_repeat(), state, buffers);
     }
 
     template <class D>

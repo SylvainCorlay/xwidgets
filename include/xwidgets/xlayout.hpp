@@ -82,30 +82,30 @@ namespace xw
     {
         base_type::serialize_state(state, buffers);
 
-        set_patch_from_property(align_content, state, buffers);
-        set_patch_from_property(align_items, state, buffers);
-        set_patch_from_property(align_self, state, buffers);
-        set_patch_from_property(bottom, state, buffers);
-        set_patch_from_property(border, state, buffers);
-        set_patch_from_property(display, state, buffers);
-        set_patch_from_property(flex, state, buffers);
-        set_patch_from_property(flex_flow, state, buffers);
-        set_patch_from_property(height, state, buffers);
-        set_patch_from_property(justify_content, state, buffers);
-        set_patch_from_property(left, state, buffers);
-        set_patch_from_property(margin, state, buffers);
-        set_patch_from_property(max_height, state, buffers);
-        set_patch_from_property(max_width, state, buffers);
-        set_patch_from_property(min_height, state, buffers);
-        set_patch_from_property(min_width, state, buffers);
-        set_patch_from_property(overflow, state, buffers);
-        set_patch_from_property(overflow_x, state, buffers);
-        set_patch_from_property(overflow_y, state, buffers);
-        set_patch_from_property(order, state, buffers);
-        set_patch_from_property(padding, state, buffers);
-        set_patch_from_property(right, state, buffers);
-        set_patch_from_property(top, state, buffers);
-        set_patch_from_property(width, state, buffers);
+        set_patch_from_property("align_content", align_content(), state, buffers);
+        set_patch_from_property("align_items", align_items(), state, buffers);
+        set_patch_from_property("align_self", align_self(), state, buffers);
+        set_patch_from_property("bottom", bottom(), state, buffers);
+        set_patch_from_property("border", border(), state, buffers);
+        set_patch_from_property("display", display(), state, buffers);
+        set_patch_from_property("flex", flex(), state, buffers);
+        set_patch_from_property("flex_flow", flex_flow(), state, buffers);
+        set_patch_from_property("height", height(), state, buffers);
+        set_patch_from_property("justify_content", justify_content(), state, buffers);
+        set_patch_from_property("left", left(), state, buffers);
+        set_patch_from_property("margin", margin(), state, buffers);
+        set_patch_from_property("max_height", max_height(), state, buffers);
+        set_patch_from_property("max_width", max_width(), state, buffers);
+        set_patch_from_property("min_height", min_height(), state, buffers);
+        set_patch_from_property("min_width", min_width(), state, buffers);
+        set_patch_from_property("overflow", overflow(), state, buffers);
+        set_patch_from_property("overflow_x", overflow_x(), state, buffers);
+        set_patch_from_property("overflow_y", overflow_y(), state, buffers);
+        set_patch_from_property("order", order(), state, buffers);
+        set_patch_from_property("padding", padding(), state, buffers);
+        set_patch_from_property("right", right(), state, buffers);
+        set_patch_from_property("top", top(), state, buffers);
+        set_patch_from_property("width", width(), state, buffers);
     }
 
     template <class D>

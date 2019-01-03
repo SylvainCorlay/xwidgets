@@ -65,12 +65,12 @@ namespace xw
     template <class D>
     inline void xobject<D>::serialize_state(xeus::xjson& state, xeus::buffer_sequence& buffers) const
     {
-        set_patch_from_property(_model_module, state, buffers);
-        set_patch_from_property(_model_module_version, state, buffers);
-        set_patch_from_property(_model_name, state, buffers);
-        set_patch_from_property(_view_module, state, buffers);
-        set_patch_from_property(_view_module_version, state, buffers);
-        set_patch_from_property(_view_name, state, buffers);
+        set_patch_from_property("_model_module", _model_module(), state, buffers);
+        set_patch_from_property("_model_module", _model_module_version(), state, buffers);
+        set_patch_from_property("_model_name", _model_name(), state, buffers);
+        set_patch_from_property("_view_module", _view_module(), state, buffers);
+        set_patch_from_property("_view_module_version", _view_module_version(), state, buffers);
+        set_patch_from_property("_view_name", _view_name(), state, buffers);
     }
 
     template <class D>

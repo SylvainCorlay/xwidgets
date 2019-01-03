@@ -55,8 +55,8 @@ namespace xw
     {
         base_type::serialize_state(state, buffers);
 
-        set_patch_from_property(value, state, buffers);
-        set_patch_from_property(disabled, state, buffers);
+        set_patch_from_property("value", value(), state, buffers);
+        set_patch_from_property("disabled", disabled(), state, buffers);
     }
 
     template <class D>

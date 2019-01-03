@@ -115,10 +115,10 @@ namespace xw
     {
         base_type::serialize_state(state, buffers);
 
-        set_patch_from_property(index, state, buffers);
-        set_patch_from_property(_options_labels, state, buffers);
-        set_patch_from_property(description, state, buffers);
-        set_patch_from_property(disabled, state, buffers);
+        set_patch_from_property("index", index(), state, buffers);
+        set_patch_from_property("_options_labels", _options_labels(), state, buffers);
+        set_patch_from_property("description", description(), state, buffers);
+        set_patch_from_property("disabled", disabled(), state, buffers);
     }
 
     template <class D>
@@ -208,10 +208,10 @@ namespace xw
     {
         base_type::serialize_state(state, buffers);
 
-        set_patch_from_property(index, state, buffers);
-        set_patch_from_property(_options_labels, state, buffers);
-        set_patch_from_property(description, state, buffers);
-        set_patch_from_property(disabled, state, buffers);
+        set_patch_from_property("index", index(), state, buffers);
+        set_patch_from_property("_options_labels", _options_labels(), state, buffers);
+        set_patch_from_property("description", description(), state, buffers);
+        set_patch_from_property("disabled", disabled(), state, buffers);
     }
 
     template <class D>

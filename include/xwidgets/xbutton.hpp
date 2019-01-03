@@ -111,8 +111,8 @@ namespace xw
     {
         base_type::serialize_state(state, buffers);
 
-        set_patch_from_property(button_color, state, buffers);
-        set_patch_from_property(font_weight, state, buffers);
+        set_patch_from_property("button_color", button_color(), state, buffers);
+        set_patch_from_property("font_weight", font_weight(), state, buffers);
     }
 
     template <class D>
@@ -147,12 +147,12 @@ namespace xw
     {
         base_type::serialize_state(state, buffers);
 
-        set_patch_from_property(description, state, buffers);
-        set_patch_from_property(tooltip, state, buffers);
-        set_patch_from_property(disabled, state, buffers);
-        set_patch_from_property(icon, state, buffers);
-        set_patch_from_property(button_style, state, buffers);
-        set_patch_from_property(style, state, buffers);
+        set_patch_from_property("description", description(), state, buffers);
+        set_patch_from_property("tooltip", tooltip(), state, buffers);
+        set_patch_from_property("disabled", disabled(), state, buffers);
+        set_patch_from_property("icon", icon(), state, buffers);
+        set_patch_from_property("button_style", button_style(), state, buffers);
+        set_patch_from_property("style", style(), state, buffers);
     }
 
     template <class D>
