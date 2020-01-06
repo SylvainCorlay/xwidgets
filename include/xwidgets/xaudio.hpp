@@ -125,7 +125,7 @@ namespace xw
         return audio_generator().value(read_file(filename));
     }
 
-    inline audio_generator audio_from_url(const std::string& url)
+    inline audio_generator audio_from_url(const std::string& /*url*/)
     {
         return audio_generator();
         // std::vector<char> value(url.cbegin(), url.cend());

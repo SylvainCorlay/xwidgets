@@ -47,7 +47,6 @@ namespace xw
         XTRAIT(xtl::xoptional<std::string>, derived_type, _view_module_version, XWIDGETS_BASE_VERSION);
         XTRAIT(xtl::xoptional<std::string>, derived_type, _view_name, "WidgetView");
 
-        using base_type::notify;
         xobject(const xobject&) = default;
 
     protected:

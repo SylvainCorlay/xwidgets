@@ -89,13 +89,13 @@ namespace xw
         this->_view_name() = "ImageView";
     }
 
-    inline image_generator image_from_file(const std::string& filename)
+    inline image_generator image_from_file(const std::string& /*filename*/)
     {
         // return image_generator().value(read_file(filename));
         return image_generator();
     }
 
-    inline image_generator image_from_url(const std::string& url)
+    inline image_generator image_from_url(const std::string& /*url*/)
     {
         // std::vector<char> value(url.cbegin(), url.cend());
         // return image_generator().value(value).format("url");
