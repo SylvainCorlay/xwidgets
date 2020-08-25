@@ -29,9 +29,6 @@ namespace xw
         using derived_type = D;
         using options_type = typename base_type::options_type;
 
-        void serialize_state(nl::json&, xeus::buffer_sequence&) const;
-        void apply_patch(const nl::json&, const xeus::buffer_sequence&);
-
     protected:
 
         xradiobuttons();
@@ -51,18 +48,6 @@ namespace xw
     /********************************
      * xradiobuttons implementation *
      ********************************/
-
-    template <class D>
-    inline void xradiobuttons<D>::serialize_state(nl::json& state, xeus::buffer_sequence& buffers) const
-    {
-        base_type::serialize_state(state, buffers);
-    }
-
-    template <class D>
-    inline void xradiobuttons<D>::apply_patch(const nl::json& patch, const xeus::buffer_sequence& buffers)
-    {
-        base_type::apply_patch(patch, buffers);
-    }
 
     template <class D>
     inline xradiobuttons<D>::xradiobuttons()

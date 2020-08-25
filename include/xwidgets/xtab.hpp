@@ -26,9 +26,6 @@ namespace xw
         using base_type = xselection_container<D>;
         using derived_type = D;
 
-        void serialize_state(nl::json&, xeus::buffer_sequence&) const;
-        void apply_patch(const nl::json&, const xeus::buffer_sequence&);
-
     protected:
 
         xtab();
@@ -44,18 +41,6 @@ namespace xw
     /***********************
      * xtab implementation *
      ***********************/
-
-    template <class D>
-    inline void xtab<D>::serialize_state(nl::json& state, xeus::buffer_sequence& buffers) const
-    {
-        base_type::serialize_state(state, buffers);
-    }
-
-    template <class D>
-    inline void xtab<D>::apply_patch(const nl::json& patch, const xeus::buffer_sequence& buffers)
-    {
-        base_type::apply_patch(patch, buffers);
-    }
 
     template <class D>
     inline xtab<D>::xtab()
